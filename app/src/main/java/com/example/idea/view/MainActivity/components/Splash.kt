@@ -1,4 +1,4 @@
-package com.example.idea.view
+package com.example.idea.view.MainActivity.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,11 +20,11 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.idea.R
-import com.example.idea.domain.Splash
-import com.example.idea.view.MainActivity.theme.IdeaTheme
+import com.example.idea.domain.SplashViewModel
+import com.example.idea.view.ui.theme.IdeaTheme
 
 @Composable
-fun Splash(navController: NavHostController, splashViewModel: Splash = hiltViewModel()) {
+fun Splash(navController: NavHostController, splashViewModel: SplashViewModel = hiltViewModel()) {
 
     splashViewModel.launch()
     LaunchedEffect(key1 = splashViewModel.navigationStateFlow) {

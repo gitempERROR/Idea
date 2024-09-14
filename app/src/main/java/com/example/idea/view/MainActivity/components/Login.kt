@@ -1,4 +1,4 @@
-package com.example.idea.view
+package com.example.idea.view.MainActivity.components
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -31,13 +31,13 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.idea.R
-import com.example.idea.domain.Login
-import com.example.idea.view.MainActivity.theme.IdeaTheme
-import com.example.idea.view.MainActivity.theme.MainButton
-import com.example.idea.view.MainActivity.theme.OneLineTextField
+import com.example.idea.domain.LoginViewModel
+import com.example.idea.view.ui.theme.IdeaTheme
+import com.example.idea.view.ui.theme.MainButton
+import com.example.idea.view.ui.theme.OneLineTextField
 
 @Composable
-fun Login(navController: NavHostController, loginViewModel: Login = hiltViewModel()) {
+fun Login(navController: NavHostController, loginViewModel: LoginViewModel = hiltViewModel()) {
 
     val transition = rememberInfiniteTransition("")
     val rotation by transition.animateFloat(
@@ -130,7 +130,7 @@ fun Login(navController: NavHostController, loginViewModel: Login = hiltViewMode
             MainButton(
                 text = "Войти",
                 enabled = loginViewModel.isButtonEnabled,
-                onClick = {},
+                onClick = {loginViewModel.login()},
                 modifier = Modifier.padding(horizontal = 30.dp).height(60.dp)
             )
         }

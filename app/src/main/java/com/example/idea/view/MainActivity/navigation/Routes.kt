@@ -1,4 +1,4 @@
-package com.example.idea.domain.navigation
+package com.example.idea.view.MainActivity.navigation
 
 sealed class Routes(val route: String) {
     data object Splash : Routes("splash")

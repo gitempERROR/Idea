@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    kotlin("plugin.serialization") version "2.0.20"
 }
 
 android {
@@ -68,7 +69,22 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // ----------- hilt ----------- //
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+    // ----------- hilt ----------- //
+
+    // ----------- SupaBase ----------- //
+    implementation(platform(libs.bom.v261))
+    implementation(libs.supabase.postgrest.kt)
+    implementation(libs.supabase.gotrue.kt)
+    implementation(libs.supabase.realtime.kt)
+
+    implementation(libs.storage.kt)
+    implementation(libs.ktor.client.android)
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.2")
+    // ----------- SupaBase ----------- //
+
 }

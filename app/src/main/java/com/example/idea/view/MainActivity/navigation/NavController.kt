@@ -1,11 +1,11 @@
-package com.example.idea.domain.navigation
+package com.example.idea.view.MainActivity.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.idea.view.Login
-import com.example.idea.view.Splash
+import com.example.idea.view.MainActivity.components.Login
+import com.example.idea.view.MainActivity.components.Splash
 
 @Composable
 fun NavController(controller: NavHostController) {

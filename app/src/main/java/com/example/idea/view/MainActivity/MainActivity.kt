@@ -10,8 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.example.idea.domain.navigation.NavController
-import com.example.idea.view.MainActivity.theme.IdeaTheme
+import com.example.idea.view.MainActivity.navigation.NavController
+import com.example.idea.view.ui.theme.IdeaTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

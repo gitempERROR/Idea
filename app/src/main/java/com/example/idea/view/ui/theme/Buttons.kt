@@ -1,4 +1,4 @@
-package com.example.idea.view.MainActivity.theme
+package com.example.idea.view.ui.theme
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
