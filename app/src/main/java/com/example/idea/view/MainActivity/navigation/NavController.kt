@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.idea.view.MainActivity.components.Login
 import com.example.idea.view.MainActivity.components.Splash
+import com.example.idea.view.MainActivity.components.Main
 
 @Composable
 fun NavController(controller: NavHostController) {
@@ -18,6 +19,9 @@ fun NavController(controller: NavHostController) {
         }
         composable(Routes.Login.route){
             Login(controller)
+        }
+        composable(Routes.Main.route){
+            Main(controller)
         }
     }
 }
