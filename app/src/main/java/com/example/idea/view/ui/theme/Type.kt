@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.sp
 val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = Futura,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Bold,
         fontSize = 22.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
@@ -34,5 +34,12 @@ val Typography = Typography(
         fontSize = 35.sp,
         lineHeight = 45.sp,
         letterSpacing = 0.5.sp
-    )
+    ),
+    labelSmall = TextStyle(
+        fontFamily = Futura,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 22.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp
+    ),
 )
