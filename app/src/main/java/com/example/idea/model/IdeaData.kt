@@ -8,4 +8,5 @@ data class IdeaData(
     var name: String,
     var author: String,
     var description: String,
+    var status: Int
 )

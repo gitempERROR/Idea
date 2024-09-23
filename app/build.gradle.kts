@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.vectordrawable)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -83,7 +84,12 @@ dependencies {
     implementation(libs.supabase.realtime.kt)
 
     implementation(libs.storage.kt)
-    implementation("io.ktor:ktor-client-cio:2.3.12")
+    implementation(libs.ktor.client.cio)
     // ----------- SupaBase ----------- //
+
+    // ----------- Coil ----------- //
+    implementation(libs.coil.compose)
+    implementation(libs.coil)
+    // ----------- Coil ----------- //
 
 }

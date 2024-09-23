@@ -76,9 +76,7 @@ fun Main(navController: NavHostController, mainViewModel: MainViewModel = hiltVi
             ) {
                 items(ideasList.value) {
                     item ->
-                    IdeaElement(item) {
-
-                    }
+                    IdeaElement(item, mainViewModel.icons[item.status - 1]) {}
                 }
             }
             Box(
@@ -110,30 +108,3 @@ fun Main(navController: NavHostController, mainViewModel: MainViewModel = hiltVi
     }
 }
 
-@Composable
-fun IdeaElement(item: IdeaData, onClick: () -> Unit){
-    Spacer(
-        modifier = Modifier.size(15.dp)
-    )
-    Box(
-        modifier = Modifier
-            .background(
-                color = IdeaTheme.colors.tertiary,
-                shape = RoundedCornerShape(50)
-            )
-            .border(
-                6.dp,
-                color = IdeaTheme.colors.primary,
-                shape = RoundedCornerShape(50),
-            )
-            .fillMaxWidth()
-            .padding(10.dp)
-    ) {
-        Text(
-            text = item.name,
-            style = IdeaTheme.typography.labelSmall,
-            color = IdeaTheme.colors.secondary,
-            modifier = Modifier.padding(5.dp)
-        )
-    }
-}

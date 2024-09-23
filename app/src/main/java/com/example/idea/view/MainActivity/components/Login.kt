@@ -120,6 +120,7 @@ fun Login(navController: NavHostController, loginViewModel: LoginViewModel = hil
                             color = IdeaTheme.colors.onBackground,
                             shape = RoundedCornerShape(20.dp)
                         )
+                        .padding(4.dp)
                 )
             }
             Spacer(

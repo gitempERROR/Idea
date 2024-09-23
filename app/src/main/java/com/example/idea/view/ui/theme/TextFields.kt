@@ -28,13 +28,13 @@ fun OneLineTextField(
         onValueChange = {newValue -> input(newValue)},
         singleLine = true,
         textStyle = IdeaTheme.typography.bodyMedium,
-        shape = RoundedCornerShape(20.dp),
+        shape = RoundedCornerShape(25.dp),
         modifier = modifier
             .fillMaxWidth()
             .background(color = Color.Transparent)
             .drawCustomIndicatorLine(
                 indicatorBorder = BorderStroke(6.dp, IdeaTheme.colors.primary),
-                indicatorPadding = 15.dp
+                indicatorPadding = 20.dp
             ),
         colors = TextFieldDefaults.textFieldColors(
             containerColor = IdeaTheme.colors.onBackground,
@@ -59,7 +59,7 @@ fun Modifier.drawCustomIndicatorLine(
         drawContent()
         if (strokeWidthDp == Dp.Hairline) return@drawWithContent
         val strokeWidth = strokeWidthDp.value * density
-        val y = size.height - strokeWidth / 2
+        val y = size.height - strokeWidth / 1.5f
         drawLine(
             indicatorBorder.brush,
             Offset((indicatorPadding).toPx(), y),

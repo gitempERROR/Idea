@@ -2,6 +2,7 @@
 agp = "8.6.0"
 bom = "VERSION"
 bomVersion = "2.6.1"
+coilCompose = "2.4.0"
 hiltAndroid = "2.52"
 hiltNavigationCompose = "1.2.0"
 kotlin = "1.9.0"
@@ -11,16 +12,20 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 kotlinxSerializationJson = "1.7.2"
 ktorClientAndroid = "2.3.12"
+ktorClientCio = "2.3.12"
 ktorClientEngine_z = "KTOR_VERSION"
 lifecycleRuntimeKtx = "2.8.4"
 activityCompose = "1.9.1"
 composeBom = "2024.04.01"
+vectordrawable = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 bom = { module = "io.github.jan-tennert.supabase:bom", version.ref = "bom" }
 bom-v261 = { module = "io.github.jan-tennert.supabase:bom", version.ref = "bomVersion" }
+coil = { module = "io.coil-kt:coil", version.ref = "coilCompose" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 gotrue-kt = { module = "io.github.jan-tennert.supabase:gotrue-kt" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
@@ -39,6 +44,7 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClientAndroid" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktorClientCio" }
 ktor-client-engine_z = { module = "io.ktor:ktor-client-[engine]", version.ref = "ktorClientEngine_z" }
 postgrest-kt = { module = "io.github.jan-tennert.supabase:postgrest-kt" }
 realtime-kt = { module = "io.github.jan-tennert.supabase:realtime-kt" }
@@ -46,6 +52,7 @@ storage-kt = { module = "io.github.jan-tennert.supabase:storage-kt", version.ref
 supabase-gotrue-kt = { module = "io.github.jan-tennert.supabase:gotrue-kt" }
 supabase-postgrest-kt = { module = "io.github.jan-tennert.supabase:postgrest-kt" }
 supabase-realtime-kt = { module = "io.github.jan-tennert.supabase:realtime-kt" }
+androidx-vectordrawable = { group = "androidx.vectordrawable", name = "vectordrawable", version.ref = "vectordrawable" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
