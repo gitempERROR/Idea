@@ -44,21 +44,22 @@ fun OneLineTextField(
                 indicatorPadding = 20.dp,
                 indicatorY = indicatorY
             ),
-        colors = TextFieldDefaults.textFieldColors(
-            containerColor = IdeaTheme.colors.onBackground,
-            disabledTextColor = IdeaTheme.colors.secondary,
+        colors = TextFieldDefaults.colors(
             focusedTextColor = IdeaTheme.colors.secondary,
             unfocusedTextColor = IdeaTheme.colors.secondary,
+            disabledTextColor = IdeaTheme.colors.secondary,
+            focusedContainerColor = IdeaTheme.colors.onBackground,
+            unfocusedContainerColor = IdeaTheme.colors.onBackground,
+            disabledContainerColor = IdeaTheme.colors.onBackground,
             cursorColor = IdeaTheme.colors.secondary,
-            focusedIndicatorColor =  Color.Transparent,
+            focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
-            disabledIndicatorColor = Color.Transparent
+            disabledIndicatorColor = Color.Transparent,
         ),
         visualTransformation = if (isPassword) PasswordVisualTransformation() else VisualTransformation.None
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MultiLineTextField(
     value: String,
@@ -84,15 +85,17 @@ fun MultiLineTextField(
                 indicatorPadding = 20.dp,
                 indicatorY = indicatorY
             ),
-        colors = TextFieldDefaults.textFieldColors(
-            containerColor = backgroundColor,
-            disabledTextColor = IdeaTheme.colors.secondary,
+        colors = TextFieldDefaults.colors(
             focusedTextColor = IdeaTheme.colors.secondary,
             unfocusedTextColor = IdeaTheme.colors.secondary,
+            disabledTextColor = IdeaTheme.colors.secondary,
+            focusedContainerColor = backgroundColor,
+            unfocusedContainerColor = backgroundColor,
+            disabledContainerColor = backgroundColor,
             cursorColor = IdeaTheme.colors.secondary,
-            focusedIndicatorColor =  Color.Transparent,
+            focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
-            disabledIndicatorColor = Color.Transparent
+            disabledIndicatorColor = Color.Transparent,
         ),
         visualTransformation = if (isPassword) PasswordVisualTransformation() else VisualTransformation.None,
         enabled = enabled,
