@@ -1,7 +1,9 @@
 package com.example.idea.domain
 
+import android.util.Log
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -22,11 +24,13 @@ class LoginViewModel @Inject constructor() : ViewModel() {
     private val _navigationStateFlow: MutableStateFlow<Routes?> = MutableStateFlow(null)
     private val _loginState: MutableState<LoginState> = mutableStateOf(LoginState("", ""))
 
-    val navigationEvent: StateFlow<Routes?> = _navigationStateFlow.asStateFlow()
+    val navigationStateFlow: StateFlow<Routes?> = _navigationStateFlow.asStateFlow()
     val loginState: LoginState get() = _loginState.value
 
-    val isButtonEnabled = derivedStateOf { _loginState.value.login.isNotBlank() && _loginState.value.password.isNotBlank() }
-    var isError = mutableStateOf(false)
+    val isButtonEnabled by derivedStateOf { _loginState.value.login.isNotBlank() && _loginState.value.password.isNotBlank() }
+
+    private var _isError = mutableStateOf(false)
+    val isError by _isError
 
     fun updateLoginState(newLoginState: LoginState) {
         _loginState.value = newLoginState
@@ -35,6 +39,7 @@ class LoginViewModel @Inject constructor() : ViewModel() {
     fun login(){
         viewModelScope.launch {
             try {
+                Log.d("login", loginState.password)
                 val user = supabase.auth.signInWith(Email){
                     email = loginState.login
                     password = loginState.password
@@ -42,7 +47,7 @@ class LoginViewModel @Inject constructor() : ViewModel() {
                 _navigationStateFlow.value = Routes.Main
             }
             catch (e: Exception) {
-                isError.value = true
+                _isError.value = true
             }
         }
     }

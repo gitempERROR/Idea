@@ -11,32 +11,33 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun MainButton(
     text: String,
-    enabled: State<Boolean>,
+    enabled: Boolean,
     onClick: () -> Unit,
-    modifier: Modifier
+    modifier: Modifier,
+    textStyle: TextStyle = IdeaTheme.typography.labelMedium
 ) {
     Button(
         onClick = onClick,
-        enabled = enabled.value,
+        enabled = enabled,
         colors = ButtonDefaults.buttonColors(
             containerColor = IdeaTheme.colors.primary,
             disabledContainerColor = IdeaTheme.colors.onBackground
         ),
         modifier = modifier
             .fillMaxWidth()
-            .height(56.dp)
-            .offset(y = 32.dp),
+            .height(56.dp),
         shape = RoundedCornerShape(20.dp)
     ) {
         Text(
             text = text,
             color = IdeaTheme.colors.tertiary,
-            style = IdeaTheme.typography.labelMedium,
+            style = textStyle,
             modifier = Modifier.align(alignment = Alignment.CenterVertically)
         )
     }

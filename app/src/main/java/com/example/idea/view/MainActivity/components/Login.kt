@@ -53,8 +53,8 @@ fun Login(navController: NavHostController, loginViewModel: LoginViewModel = hil
         label = ""
     )
 
-    LaunchedEffect(key1 = loginViewModel.navigationEvent) {
-        loginViewModel.navigationEvent.collect { event ->
+    LaunchedEffect(key1 = loginViewModel.navigationStateFlow) {
+        loginViewModel.navigationStateFlow.collect { event ->
             event?.let { navController.navigate(event.route) }
         }
     }
@@ -106,9 +106,9 @@ fun Login(navController: NavHostController, loginViewModel: LoginViewModel = hil
         Column(
             modifier = Modifier
                 .align(alignment = Alignment.BottomEnd)
-                .padding(bottom = 95.dp)
+                .padding(bottom = 50.dp)
         ) {
-            if (loginViewModel.isError.value) {
+            if (loginViewModel.isError) {
                 Text(
                     text = "Неверные данные для входа",
                     color = IdeaTheme.colors.primary,
@@ -162,10 +162,11 @@ fun Login(navController: NavHostController, loginViewModel: LoginViewModel = hil
                         )
                     )
                 },
-                modifier = Modifier.padding(horizontal = 30.dp)
+                modifier = Modifier.padding(horizontal = 30.dp),
+                isPassword = true
             )
             Spacer(
-                modifier = Modifier.height(35.dp)
+                modifier = Modifier.height(71.dp)
             )
             MainButton(
                 text = "Войти",
